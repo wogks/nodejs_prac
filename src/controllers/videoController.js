@@ -1,12 +1,13 @@
-export const trending = (req, res) => res.send("homepage videos");
+export const trending = (req, res) => res.render("home", {
+    pageTitle: "Home"
+});
 export const see = (req, res) => {
-    console.log(req.params)
-    res.send(`watch ${req.params.id}`);
+    res.render("watch");
 };
 
 export const edit = (req, res) => {
     console.log(req.params)
-    res.send("edit");
+    res.render("edit");
 };
 export const search = (req, res) => res.send("search");
 export const deleteVideo = (req, res) => res.send("delete");
