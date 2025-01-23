@@ -22,7 +22,7 @@ let videos = [
     }, {
         rating: 2,
         comments: 4,
-        views: 54,
+        views: 1,
         createdAt: "now",
         id: 3,
         title: "hotClip3"
@@ -38,11 +38,11 @@ export const trending = (req, res) => {
 
     });
 };
-export const see = (req, res) => {
+export const watch = (req, res) => {
     const { id } = req.params;
     const video = videos[id - 1];
 
-    return res.render("watch", { pageTitle: `Watch ${video.title}` });
+    return res.render("watch", { pageTitle: `Watch ${video.title}`, video });
 };
 
 export const edit = (req, res) => {
