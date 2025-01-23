@@ -3,17 +3,34 @@ const fakeUser = {
     loggedIn: false
 }
 
+let videos = [
+    {
+        rating: 2,
+        comments: 4,
+        views: 54,
+        createdAt: "now",
+        id: 1,
+        title: "hotClip"
+    }
+    , {
+        rating: 2,
+        comments: 4,
+        views: 54,
+        createdAt: "now",
+        id: 2,
+        title: "hotClip2"
+    }, {
+        rating: 2,
+        comments: 4,
+        views: 54,
+        createdAt: "now",
+        id: 3,
+        title: "hotClip3"
+    }
+];
+
 export const trending = (req, res) => {
-    const videos = [
-        {
-            rating: 2,
-            comments: 4,
-            views: 54,
-            createdAt: "now",
-            id: 1,
-            title: "hotClip"
-        }
-    ];
+
     res.render("home", {
         pageTitle: "Home",
         fakeUser: fakeUser,
@@ -22,7 +39,10 @@ export const trending = (req, res) => {
     });
 };
 export const see = (req, res) => {
-    res.render("watch");
+    const { id } = req.params;
+    const video = videos[id - 1];
+
+    return res.render("watch", { pageTitle: `Watch ${video.title}` });
 };
 
 export const edit = (req, res) => {
