@@ -3,11 +3,24 @@ const fakeUser = {
     loggedIn: false
 }
 
-export const trending = (req, res) => res.render("home", {
-    pageTitle: "Home",
-    fakeUser: fakeUser
+export const trending = (req, res) => {
+    const videos = [
+        {
+            rating: 2,
+            comments: 4,
+            views: 54,
+            createdAt: "now",
+            id: 1,
+            title: "hotClip"
+        }
+    ];
+    res.render("home", {
+        pageTitle: "Home",
+        fakeUser: fakeUser,
+        videos
 
-});
+    });
+};
 export const see = (req, res) => {
     res.render("watch");
 };

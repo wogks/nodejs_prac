@@ -1,5 +1,11 @@
 extends base.pug
+include mixins/video
 
 
 block content 
     h2 Welcome here you will see the trnding videos
+    ul
+        each po in videos
+            +video(po)
+        else   
+            li Sorry nothing found
