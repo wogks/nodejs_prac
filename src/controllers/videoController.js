@@ -7,12 +7,7 @@ export const home = async (req, res) => {
     } catch {
         return res.render("server error");
     }
-    // Video.find({}).then((videos) => {
-    //     console.log("videos", videos);
-    //     return res.render("home", { pageTitle: "Home", videos });
-    // }).catch((error) => {
-    //     console.log("errors", error);
-    // });
+
 
 }
 
